@@ -6,7 +6,8 @@
     A = "hellowworld"   B="loop",  则A和B的最长公共子串是“lo”
 # 动态规划法
 **定义：** res[i][j]是以A[i]和B[j]为最后一个元素的最长公共子串的长度<br>
->> 以例2为例，构建如下表格：<br>
+>>以例2为例，构建如下表格：<br>
+
 ![](https://github.com/orangerfun/LeetCode/raw/master/最长公共子串/0.png)
 所以递推公式为：
 
