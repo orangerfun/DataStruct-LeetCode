@@ -31,6 +31,6 @@
 对于每个元素考虑移动到右边或者下面，因此获得最小路径和我们有如下递推公式：
 
     dp[i][j] = grid[i][j]+min(dp[i+1][j],dp[i][j+1])                   i != len(grid) and j != len(grid[0])
-    dp[i][j] = dp[i][j+1] + grid[i][j]                                 i == len(grid)
-    dp[i][j] = dp[i+1][j] + grid[i][j]                                 j == len(grid[0])
+    dp[i][j] = dp[i][j+1] + grid[i][j]                                 i == len(grid) and j != len(grid[0])
+    dp[i][j] = dp[i+1][j] + grid[i][j]                                 j == len(grid[0]) and i != len(grid)
 **程序见 dp.py**
