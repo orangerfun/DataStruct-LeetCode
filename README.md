@@ -5,9 +5,9 @@
 * 动态规划： `64.最短路径`   `最长公共子串`  `最长公共子序列`   `最长回文子串`  `70.爬楼梯`
 * 回溯剪枝
 # 数据结构总结
-## 树
+## 1.树
 ### 二叉树构建
-构建原则：左子树<树根<右子树1<br>
+构建原则：左子树<树根<右子树<br>
 **（1）一维数组表示二叉树**
 * 左子树的索引是父节点索引值*2
 * 右子树索引值是父节点索引值*2+1
@@ -84,7 +84,31 @@ def postorder(root):
 		postorder(root.right)
 		print(root.data, end="\t")
 ```
-
+### 二叉树查找、删除、插入节点
+**(1)查找**
+```python3
+def search(ptr, val):
+	i = 1
+	while True:
+		if ptr.data == val:
+			print("已找到，找了%d次"%i)
+			return ptr
+		elif ptr == None:
+			return None
+		elif ptr.data > val:
+			ptr = ptr.left
+		else:
+			ptr = ptr.right
+		i += 1
+```
+**(2)插入节点**
+```python3
+ptr = search(root, val)
+if ptr != None:                 # 查找需要插入的节点
+	print("该节点已经存在")
+else:                           # 若不存在，将此节点建立到树中，Btree是上面提到的建立树的函数
+	ptr = Btree(ptr, data)
+```
 # Thanks
 感谢网络上一些博客提供思路
 
